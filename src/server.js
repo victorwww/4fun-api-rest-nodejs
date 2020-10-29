@@ -1,10 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+// const dotenv = require('dotenv/config');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://omnistack:qwe123qwe@omnistack.fmuhi.mongodb.net/semana09?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_CONNECT, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -18,4 +19,4 @@ mongoose.connect('mongodb+srv://omnistack:qwe123qwe@omnistack.fmuhi.mongodb.net/
 app.use(express.json());
 app.use(routes);
 
-app.listen(3333);
+app.listen(process.env.APP_PORT);

@@ -1,0 +1,2 @@
+MONGO_CONNECT=mongodb+srv://<username>:<password>@<cluster>.fmuhi.mongodb.net/<dbname>?retryWrites=true&w=majority
+APP_PORT=3333
